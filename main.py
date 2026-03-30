@@ -16,7 +16,7 @@ from schemas import (
 
 models.Base.metadata.create_all(bind=database.engine)
 
-app = FastAPI(title="Nice Research - API Profissional Completa")
+app = FastAPI(title="Nice Research")
 
 app.add_middleware(
     CORSMiddleware,
@@ -54,7 +54,7 @@ def remover_bairro(bairro_id: int, db: Session = Depends(database.get_db)):
     return {"message": "Bairro removido"}
 
 
-# --- CANDIDATOS ---
+#Candidatos
 @app.post("/candidatos/", response_model=Candidato, tags=["Candidatos"])
 def criar_candidato(candidato: CandidatoCreate, db: Session = Depends(database.get_db)):
     novo = models.Candidato(**candidato.model_dump())
@@ -79,7 +79,7 @@ def remover_candidato(candidato_id: int, db: Session = Depends(database.get_db))
     return {"message": "Candidato removido"}
 
 
-# --- ENTREVISTAS (VOTOS) ---
+#Entrevistas
 @app.post("/entrevistas/", status_code=status.HTTP_201_CREATED, tags=["Votos"])
 def registrar_voto(voto: EntrevistaCreate, db: Session = Depends(database.get_db)):
     if not db.query(models.Bairro).get(voto.bairro_id):
@@ -121,7 +121,7 @@ def remover_voto(voto_id: int, db: Session = Depends(database.get_db)):
     return {"message": "Voto removido"}
 
 
-# --- INTELIGÊNCIA ---
+#Ranking
 @app.get("/ranking-geral/", tags=["Inteligência"])
 def ranking(dias: Optional[int] = None, db: Session = Depends(database.get_db)):
     query = db.query(models.Entrevista)
