@@ -4,36 +4,35 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-05998b.svg)](https://fastapi.tiangolo.com/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791.svg)](https://www.postgresql.org/)
 
-O **Nice Research** é uma API desenvolvida para digitalizar a coleta e análise de dados em pesquisas eleitorais. O sistema substitui o preenchimento manual por uma solução estruturada, garantindo organização, validação e acesso centralizado às informações coletadas.
+O Nice Research é uma API voltada para a digitalização e organização de dados em pesquisas eleitorais.
 
-## Diferenciais Técnicos 
+A proposta do sistema é substituir processos manuais por uma solução estruturada, permitindo maior controle, consistência e acesso centralizado às informações coletadas.
 
-- **Arquitetura Assíncrona:** Construída com FastAPI para suportar alta concorrência durante picos de coleta de dados.
-- **Integridade Referencial:** Modelagem de dados rigorosa com PostgreSQL, garantindo que cada voto esteja vinculado corretamente a bairros e candidatos existentes.
-- **Validação de Dados:** Uso extensivo de Pydantic para garantir que nenhum dado inconsistente entre no banco de dados.
-- **Garantia de Qualidade:** Inclui scripts de **Stress Test** que validam a estabilidade do sistema sob carga (simulação de inserções simultâneas).
+Objetivo
 
-## Tecnologias Utilizadas
+Fornecer uma base sólida para coleta e gerenciamento de dados de entrevistas, garantindo integridade das informações e suporte para análises futuras.
 
-- **Back-end:** Python, FastAPI.
-- **Banco de Dados:** PostgreSQL (Relacional).
-- **ORM:** SQLAlchemy (Mapeamento Objeto-Relacional).
-- **Documentação:** Swagger UI (OpenAPI) gerado automaticamente.
-- **Ambiente:** Linux (Fedora Workstation).
+Decisões Técnicas
+FastAPI para construção de uma API performática e com suporte a operações assíncronas
+PostgreSQL como banco de dados relacional
+SQLAlchemy para mapeamento objeto-relacional
+Pydantic para validação de dados
 
-## Funcionalidades Principais
+Essas escolhas visam manter o sistema organizado, consistente e preparado para evolução.
 
-- **Gestão de Bairros:** Cadastro e normalização de localidades.
-- **Gestão de Candidatos:** Controle de partidos, números e cargos.
-- **Registro de Entrevistas:** Coleta de votos com rastreabilidade (pesquisador, votante e timestamp).
-- **Módulo de Inteligência:**
-    - **Ranking Geral:** Cálculo automático de porcentagens e total de votos.
-    - **Análise Qualitativa:** Feed de observações coletadas em campo.
-    - **Mapa de Cobertura:** Relatório de volume de entrevistas por bairro.
+Funcionalidades
+Estrutura de API para gerenciamento de dados
+Modelagem de entidades relacionadas a pesquisas
+Validação de dados de entrada
+Base para implementação de análises e relatórios
 
-## Como Executar o Projeto
+# Tecnologias Utilizadas
+- Python
+- FastAPI
+- PostgreSQL
+- SQLAlchemy
+- Pydantic
 
-1. **Clone o repositório:**
-   ```bash
-   git clone [https://github.com/33alexandre/nice-research-api.git](https://github.com/33alexandre/nice-research-api.git)
-   cd nice-research-api
+# Como executar
+<pre> bash git clone https://github.com/33alexandre/nice-research-api.git 
+ cd nice-research-api </pre>
